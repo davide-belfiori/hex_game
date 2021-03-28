@@ -19,6 +19,14 @@ Oltre allo stato di partenza, minimax richiede:
 
 Questo gioco, al contrario della versione classica di Hex, ammette che la partita termini con un pareggio e, in base al grafo preso in considerazione, non è sempre garantita l'esistenza di una strategia vincente per il giocatore Bianco.
 
+## L'applicazione minimhex
+L'applicazione minimhex fornisce 3 esempi di risoluzione del problema applicando l'algoritmo minimax.
+
+La complessità degli esempi è crescente e per ognuno viene calcolato:
+- lo stato finale che produce il miglior risultato
+- il valore associato a tale stato
+- il tempo di esecuzione dell'algoritmo espresso in secondi
+
 ## Compilare ed eseguire l'applicazione
 
 > **Prerequisiti** : GNU-Make in versione 3.80 o maggiore.
