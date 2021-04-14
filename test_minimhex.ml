@@ -5,7 +5,7 @@ exception EmptyList;;
 
 let rec lista_max = function
   (** Data una lista di elementi (a,b),
-    restituisce l'elemento tale che b è massimo.
+    restituisce l'elemento tale che b ï¿½ massimo.
     Solleva l'eccezione EmptyList se la lista vuota.*)
   [] -> raise EmptyList
   | x::[] -> x
@@ -15,7 +15,7 @@ let rec lista_max = function
 
 let rec lista_min = function
   (** Data una lista di elementi (a,b),
-   restituisce l'elemento tale che b è minimo
+   restituisce l'elemento tale che b ï¿½ minimo
    Solleva l'eccezione EmptyList se la lista vuota. *)
   [] -> raise EmptyList
   | x::[] -> x 
@@ -52,6 +52,12 @@ type 'a grafo = Grafo of ('a -> 'a list) ;;
 
 type colore = BIANCO | NERO ;;
 
+    
+(** Lo Stato in un particolare momento del gioco
+ puo' essere descritto come una tupla di 6 elementi: 
+    
+   < campo, s, t, nodi bianchi, nodi neri, colore del prossimo giocatore > 
+*)
 type 'a stato = Stato of 'a grafo * 'a * 'a * 'a list * 'a list * colore ;;
 
 
@@ -115,7 +121,7 @@ let succ_stato (Stato(grafo, s, t, nodi_bianchi, nodi_neri, prossimo)) =
 (* ----- TEST ----- *)
 
 let utility(Stato(campo, s,t, nodi_bianchi, nodi_neri, prossimo)) =
-  (** Funzione di utilitÃ  dell'algoritmo minimax 
+  (** Funzione di utilitï¿½  dell'algoritmo minimax 
       -> 1 = BIANCO vince
       -> -1 = NERO vince
       -> 0 = pareggio
@@ -148,7 +154,8 @@ let hex_succ (righe, colonne) (y,x) =
 
 
 let dim = 3 ;;
-let grafo_hex = Grafo (hex_succ);;
+
+let grafo_hex = Grafo (hex_succ (dim, dim));;
 
 let s = (0,0);; 
 let t = (dim - 1, dim - 1);;
